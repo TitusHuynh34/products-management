@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Product Page</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700" />
+  {{!-- Url: http://localhost:3000/css/fontawesome.min.css --}}
+  <link rel="stylesheet" href="/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/templatemo-style.css" />
+</head>
+
+<body id="reportsPage">
+  <!-- Header -->
+  {{> header pageCode=pageCode}}
+
+  <!-- Content -->
+  {{{body}}}
+
+  <!-- Footer -->
+  {{> footer}}
+
+  <!-- Scripts -->
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script>
+    // Xu ly redirect den trang chi tiet danh muc
+    $(function () {
+      $(".tm-category-name").on(
+        "click",
+        function (event) {
+          const categoryId = event.target.getAttribute("data-category-id");
+          window.location.href = `/products/category/${categoryId}`;
+        }
+      );
+    });
+
+    $(function() {
+      $(".tm-category-delete-link").on(
+        "click",
+        function(event) {
+          event.preventDefault();
+          const id = event.target.getAttribute("data-category-id");
+
+          // Goi toi url voi method DELETE de yeu cau xoa danh muc
+          $.ajax({
+            url: `/products/category/${id}`,
+            method: "DELETE"
+          })
+          .done(function() {
+            // Reload lai trang
+            window.location.reload();
+          })
+        }
+      )
+    })
+
+    $(function() {
+      $('#fileInput').on("change", (event) => {
+        // Lay file da chon
+        const file = event.target.files[0];
+        // Tao object URL
+        const url = URL.createObjectURL(file)
+        // Gan url cho attribute "src" cua the img co id la "product-image-preview"
+        $('#product-image-preview').attr("src", url);
+      })
+    })
+  </script>
+</body>
+
+</html>

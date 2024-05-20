@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Account Page</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+    />
+    <link rel="stylesheet" href="css/fontawesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/templatemo-style.css" />
+  </head>
+
+  <body id="reportsPage">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-xl">
+      <div class="container h-100">
+        <a class="navbar-brand" href="index.html">
+          <h1 class="tm-site-title mb-0">Product Admin</h1>
+        </a>
+        <button
+          class="navbar-toggler ml-auto mr-0"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars tm-nav-icon"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto h-100">
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">
+                <i class="fas fa-shopping-cart"></i> Products
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="accounts.html">
+                <i class="far fa-user"></i> Accounts
+              </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link d-block" href="login.html">
+                Admin, <b>Logout</b>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mt-5">
+      <div class="row tm-content-row">
+        <div class="col-12 tm-block-col">
+          <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+            <h2 class="tm-block-title">List of Accounts</h2>
+            <p class="text-white">Accounts</p>
+            <form action="">
+              <select class="custom-select" name="accountType">
+                <option value="0">Select account type</option>
+                <option value="1">Admin</option>
+                <option value="4">Customer</option>
+              </select>
+              <button
+                type="submit"
+                class="btn btn-primary btn-block text-uppercase mt-3"
+              >
+                Filter accounts
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- row -->
+      <a href="" class="btn btn-primary btn-block text-uppercase mb-3"
+        >Add new account</a
+      >
+      <table class="table table-hover tm-table-small tm-product-table">
+        <thead>
+          <tr>
+            <th scope="col">ACCOUNT NAME</th>
+            <th scope="col">ACCOUNT TYPE</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tm-product-name">Nguyen Van A</td>
+            <td>Admin</td>
+            <td>nguyenvana@gmail.com</td>
+            <td>
+              <a href="#" class="tm-product-delete-link">
+                <i class="far fa-trash-alt tm-product-delete-icon"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td class="tm-product-name">Nguyen Van B</td>
+            <td>Customer</td>
+            <td>nguyenvanb@gmail.com</td>
+            <td>
+              <a href="#" class="tm-product-delete-link">
+                <i class="far fa-trash-alt tm-product-delete-icon"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <footer class="tm-footer row tm-mt-small">
+      <div class="col-12 font-weight-light">
+        <p class="text-center text-white mb-0 px-4 small">
+          Copyright &copy; <b>2018</b> All rights reserved. Design:
+          <a
+            rel="nofollow noopener"
+            href="https://templatemo.com"
+            class="tm-footer-link"
+            >Template Mo</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(function () {
+        $(".tm-product-name").on("click", function () {
+          window.location.href = "edit-product.html";
+        });
+      });
+    </script>
+  </body>
+</html>
